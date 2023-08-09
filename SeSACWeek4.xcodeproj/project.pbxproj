@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B6C2E462A81C4CD00BE1CCC /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E452A81C4CD00BE1CCC /* WeatherViewController.swift */; };
+		8B6C2E482A81E78500BE1CCC /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E472A81E78500BE1CCC /* VideoViewController.swift */; };
+		8B6C2E7B2A83230B00BE1CCC /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E7A2A83230B00BE1CCC /* VideoTableViewCell.swift */; };
 		8B90BBB92A80967D00A3A87B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90BBB82A80967D00A3A87B /* AppDelegate.swift */; };
 		8B90BBBB2A80967D00A3A87B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90BBBA2A80967D00A3A87B /* SceneDelegate.swift */; };
 		8B90BBBD2A80967D00A3A87B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90BBBC2A80967D00A3A87B /* ViewController.swift */; };
@@ -17,9 +20,14 @@
 		8B90BBD12A8096CC00A3A87B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8B90BBD02A8096CC00A3A87B /* SwiftyJSON */; };
 		8B90BBD42A8096D500A3A87B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8B90BBD32A8096D500A3A87B /* Kingfisher */; };
 		8B90BBD62A809BA100A3A87B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8B90BBD52A809BA100A3A87B /* .gitignore */; };
+		8B90BBD82A809C2F00A3A87B /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90BBD72A809C2F00A3A87B /* TranslationViewController.swift */; };
+		8B90BBDA2A809C5F00A3A87B /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90BBD92A809C5F00A3A87B /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B6C2E452A81C4CD00BE1CCC /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		8B6C2E472A81E78500BE1CCC /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		8B6C2E7A2A83230B00BE1CCC /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		8B90BBB52A80967D00A3A87B /* SeSACWeek4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACWeek4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B90BBB82A80967D00A3A87B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B90BBBA2A80967D00A3A87B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +37,8 @@
 		8B90BBC42A80967E00A3A87B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B90BBC62A80967E00A3A87B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B90BBD52A809BA100A3A87B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		8B90BBD72A809C2F00A3A87B /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
+		8B90BBD92A809C5F00A3A87B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +75,15 @@
 			isa = PBXGroup;
 			children = (
 				8B90BBD52A809BA100A3A87B /* .gitignore */,
+				8B90BBD72A809C2F00A3A87B /* TranslationViewController.swift */,
+				8B90BBD92A809C5F00A3A87B /* APIKey.swift */,
 				8B90BBB82A80967D00A3A87B /* AppDelegate.swift */,
 				8B90BBBA2A80967D00A3A87B /* SceneDelegate.swift */,
 				8B90BBBC2A80967D00A3A87B /* ViewController.swift */,
 				8B90BBBE2A80967D00A3A87B /* Main.storyboard */,
+				8B6C2E472A81E78500BE1CCC /* VideoViewController.swift */,
+				8B6C2E7A2A83230B00BE1CCC /* VideoTableViewCell.swift */,
+				8B6C2E452A81C4CD00BE1CCC /* WeatherViewController.swift */,
 				8B90BBC12A80967E00A3A87B /* Assets.xcassets */,
 				8B90BBC32A80967E00A3A87B /* LaunchScreen.storyboard */,
 				8B90BBC62A80967E00A3A87B /* Info.plist */,
@@ -158,9 +173,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B90BBD82A809C2F00A3A87B /* TranslationViewController.swift in Sources */,
+				8B6C2E482A81E78500BE1CCC /* VideoViewController.swift in Sources */,
+				8B6C2E462A81C4CD00BE1CCC /* WeatherViewController.swift in Sources */,
 				8B90BBBD2A80967D00A3A87B /* ViewController.swift in Sources */,
 				8B90BBB92A80967D00A3A87B /* AppDelegate.swift in Sources */,
+				8B6C2E7B2A83230B00BE1CCC /* VideoTableViewCell.swift in Sources */,
 				8B90BBBB2A80967D00A3A87B /* SceneDelegate.swift in Sources */,
+				8B90BBDA2A809C5F00A3A87B /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
