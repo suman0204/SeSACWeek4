@@ -18,6 +18,8 @@ struct Movie {
 class ViewController: UIViewController {
 
     @IBOutlet var movieTableView: UITableView!
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
+    @IBOutlet var searchBar: UISearchBar!
     
     var movieList: [Movie] = []
     
@@ -29,13 +31,17 @@ class ViewController: UIViewController {
         
         movieTableView.rowHeight = 60
         
-        callRequest()
-        
+        indicatorView.isHidden = true
+                
     }
 
     
-    func callRequest() {
-        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=20120101"
+    func callRequest(date: String) {
+        
+        indicatorView.startAnimating()
+        indicatorView.isHidden = false
+        
+        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=\(date)"
         
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
@@ -65,8 +71,8 @@ class ViewController: UIViewController {
                     
                 }
                 
-                
-                
+                self.indicatorView.stopAnimating()
+                self.indicatorView.isHidden = true
                 self.movieTableView.reloadData()
                 
             case .failure(let error):
@@ -77,6 +83,15 @@ class ViewController: UIViewController {
     }
 
 }
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        // 20220101 -> 검색 조건 1. 8글자 2. 20233333 올바른 날짜 3. 날짜 범주
+        callRequest(date: searchBar.text!)
+    }
+}
+
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
