@@ -15,25 +15,27 @@ class TranslationViewController: UIViewController {
     @IBOutlet var translateTextView: UITextView!
     @IBOutlet var requestButton: UIButton!
     
+    let helper = UserDefaultsHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        originalTextView.text = UserDefaultsHelper.standard.nickname //
+        originalTextView.text = UserDefaults.standard.string(forKey: "nickname") // 윗줄 코드와 동일하게 동작
+
+        UserDefaults.standard.set("고래밥", forKey: "nickname")
+        UserDefaultsHelper.standard.nickname = "칙촉" // 윗줄 코드와 동일하게 동작
+        
+        
+        UserDefaults.standard.set(3, forKey: "age")
+        
+        UserDefaults.standard.string(forKey: "nickname")
+        UserDefaults.standard.integer(forKey: "age")
+        
         originalTextView.text = ""
         translateTextView.text = ""
         translateTextView.isEditable = false
         
-        
-//        let alert = UIAlertController(title: "dd", message: "jk", preferredStyle: .alert)
-//        
-//        let action = UIAlertAction(title: "확인", style: .default) { <#UIAlertAction#> in
-//            <#code#>
-//        }
-//        
-//        alert.addAction(action)
-//        present(alert, animated: true)
-//        present(alert, animated: true) {
-//            <#code#>
-//        }
     }
     
 

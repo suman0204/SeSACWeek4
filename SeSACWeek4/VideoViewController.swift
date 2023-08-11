@@ -113,7 +113,7 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell") as? VideoTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoViewController.identifier) as? VideoTableViewCell else {
             return UITableViewCell()
         }
         

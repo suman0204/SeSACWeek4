@@ -11,6 +11,11 @@
 		8B6C2E482A81E78500BE1CCC /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E472A81E78500BE1CCC /* VideoViewController.swift */; };
 		8B6C2E7B2A83230B00BE1CCC /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E7A2A83230B00BE1CCC /* VideoTableViewCell.swift */; };
 		8B6C2E8F2A84FFE800BE1CCC /* TranslationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E8E2A84FFE800BE1CCC /* TranslationPickerViewController.swift */; };
+		8B6C2E912A85BAA400BE1CCC /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E902A85BAA400BE1CCC /* ReusableViewProtocol.swift */; };
+		8B6C2E932A85BCFC00BE1CCC /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E922A85BCFC00BE1CCC /* UserDefaultsHelper.swift */; };
+		8B6C2E972A85C53600BE1CCC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E962A85C53600BE1CCC /* Endpoint.swift */; };
+		8B6C2E992A85C5CB00BE1CCC /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E982A85C5CB00BE1CCC /* URL+Extension.swift */; };
+		8B6C2E9B2A85C77C00BE1CCC /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C2E9A2A85C77C00BE1CCC /* KakaoAPIManager.swift */; };
 		8B90BBB92A80967D00A3A87B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90BBB82A80967D00A3A87B /* AppDelegate.swift */; };
 		8B90BBBB2A80967D00A3A87B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90BBBA2A80967D00A3A87B /* SceneDelegate.swift */; };
 		8B90BBBD2A80967D00A3A87B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90BBBC2A80967D00A3A87B /* ViewController.swift */; };
@@ -30,6 +35,11 @@
 		8B6C2E472A81E78500BE1CCC /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		8B6C2E7A2A83230B00BE1CCC /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		8B6C2E8E2A84FFE800BE1CCC /* TranslationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationPickerViewController.swift; sourceTree = SOURCE_ROOT; };
+		8B6C2E902A85BAA400BE1CCC /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		8B6C2E922A85BCFC00BE1CCC /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		8B6C2E962A85C53600BE1CCC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		8B6C2E982A85C5CB00BE1CCC /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		8B6C2E9A2A85C77C00BE1CCC /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		8B90BBB52A80967D00A3A87B /* SeSACWeek4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACWeek4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B90BBB82A80967D00A3A87B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B90BBBA2A80967D00A3A87B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +94,12 @@
 				8B90BBBA2A80967D00A3A87B /* SceneDelegate.swift */,
 				8B90BBBC2A80967D00A3A87B /* ViewController.swift */,
 				8B90BBBE2A80967D00A3A87B /* Main.storyboard */,
+				8B6C2E902A85BAA400BE1CCC /* ReusableViewProtocol.swift */,
+				8B6C2E962A85C53600BE1CCC /* Endpoint.swift */,
+				8B6C2E9A2A85C77C00BE1CCC /* KakaoAPIManager.swift */,
+				8B6C2E982A85C5CB00BE1CCC /* URL+Extension.swift */,
 				8B6C2E472A81E78500BE1CCC /* VideoViewController.swift */,
+				8B6C2E922A85BCFC00BE1CCC /* UserDefaultsHelper.swift */,
 				8B6C2E7A2A83230B00BE1CCC /* VideoTableViewCell.swift */,
 				8B6C2E452A81C4CD00BE1CCC /* WeatherViewController.swift */,
 				8B90BBC12A80967E00A3A87B /* Assets.xcassets */,
@@ -177,13 +192,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B90BBD82A809C2F00A3A87B /* TranslationViewController.swift in Sources */,
+				8B6C2E912A85BAA400BE1CCC /* ReusableViewProtocol.swift in Sources */,
 				8B6C2E482A81E78500BE1CCC /* VideoViewController.swift in Sources */,
 				8B6C2E462A81C4CD00BE1CCC /* WeatherViewController.swift in Sources */,
+				8B6C2E9B2A85C77C00BE1CCC /* KakaoAPIManager.swift in Sources */,
 				8B90BBBD2A80967D00A3A87B /* ViewController.swift in Sources */,
 				8B90BBB92A80967D00A3A87B /* AppDelegate.swift in Sources */,
 				8B6C2E7B2A83230B00BE1CCC /* VideoTableViewCell.swift in Sources */,
+				8B6C2E932A85BCFC00BE1CCC /* UserDefaultsHelper.swift in Sources */,
+				8B6C2E992A85C5CB00BE1CCC /* URL+Extension.swift in Sources */,
 				8B90BBBB2A80967D00A3A87B /* SceneDelegate.swift in Sources */,
 				8B90BBDA2A809C5F00A3A87B /* APIKey.swift in Sources */,
+				8B6C2E972A85C53600BE1CCC /* Endpoint.swift in Sources */,
 				8B6C2E8F2A84FFE800BE1CCC /* TranslationPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
