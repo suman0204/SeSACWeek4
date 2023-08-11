@@ -28,6 +28,8 @@
 		8B90BBD62A809BA100A3A87B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8B90BBD52A809BA100A3A87B /* .gitignore */; };
 		8B90BBD82A809C2F00A3A87B /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90BBD72A809C2F00A3A87B /* TranslationViewController.swift */; };
 		8B90BBDA2A809C5F00A3A87B /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90BBD92A809C5F00A3A87B /* APIKey.swift */; };
+		8BD528942A85E365003C031B /* TranslateAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD528932A85E365003C031B /* TranslateAPIManager.swift */; };
+		8BD528962A85F9EE003C031B /* AsyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD528952A85F9EE003C031B /* AsyncViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		8B90BBD52A809BA100A3A87B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		8B90BBD72A809C2F00A3A87B /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
 		8B90BBD92A809C5F00A3A87B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		8BD528932A85E365003C031B /* TranslateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPIManager.swift; sourceTree = SOURCE_ROOT; };
+		8BD528952A85F9EE003C031B /* AsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		8B90BBB72A80967D00A3A87B /* SeSACWeek4 */ = {
 			isa = PBXGroup;
 			children = (
+				8BD528932A85E365003C031B /* TranslateAPIManager.swift */,
 				8B6C2E8E2A84FFE800BE1CCC /* TranslationPickerViewController.swift */,
 				8B90BBD52A809BA100A3A87B /* .gitignore */,
 				8B90BBD72A809C2F00A3A87B /* TranslationViewController.swift */,
@@ -94,6 +99,7 @@
 				8B90BBBA2A80967D00A3A87B /* SceneDelegate.swift */,
 				8B90BBBC2A80967D00A3A87B /* ViewController.swift */,
 				8B90BBBE2A80967D00A3A87B /* Main.storyboard */,
+				8BD528952A85F9EE003C031B /* AsyncViewController.swift */,
 				8B6C2E902A85BAA400BE1CCC /* ReusableViewProtocol.swift */,
 				8B6C2E962A85C53600BE1CCC /* Endpoint.swift */,
 				8B6C2E9A2A85C77C00BE1CCC /* KakaoAPIManager.swift */,
@@ -192,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B90BBD82A809C2F00A3A87B /* TranslationViewController.swift in Sources */,
+				8BD528962A85F9EE003C031B /* AsyncViewController.swift in Sources */,
 				8B6C2E912A85BAA400BE1CCC /* ReusableViewProtocol.swift in Sources */,
 				8B6C2E482A81E78500BE1CCC /* VideoViewController.swift in Sources */,
 				8B6C2E462A81C4CD00BE1CCC /* WeatherViewController.swift in Sources */,
@@ -203,6 +210,7 @@
 				8B6C2E992A85C5CB00BE1CCC /* URL+Extension.swift in Sources */,
 				8B90BBBB2A80967D00A3A87B /* SceneDelegate.swift in Sources */,
 				8B90BBDA2A809C5F00A3A87B /* APIKey.swift in Sources */,
+				8BD528942A85E365003C031B /* TranslateAPIManager.swift in Sources */,
 				8B6C2E972A85C53600BE1CCC /* Endpoint.swift in Sources */,
 				8B6C2E8F2A84FFE800BE1CCC /* TranslationPickerViewController.swift in Sources */,
 			);

@@ -15,7 +15,7 @@ class TranslationViewController: UIViewController {
     @IBOutlet var translateTextView: UITextView!
     @IBOutlet var requestButton: UIButton!
     
-    let helper = UserDefaultsHelper()
+//    let helper = UserDefaultsHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +64,10 @@ extension TranslationViewController {
                 let json = JSON(value)
                 print("JSON: \(json)")
                 let source = json["langCode"].stringValue
-                self.callPapagoTranslationRequest(source: source)
+//                callPapagoTranslationRequest(source: source)
+                TranlateAPIManager.shared.callRequest(text: self.originalTextView.text ?? "", source: source) { result in
+                    self.translateTextView.text = result
+                }
             case .failure(let error):
                 print(error)
             }
