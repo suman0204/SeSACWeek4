@@ -10,20 +10,21 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-struct Video {
-    let author: String
-    let date: String
-    let time: Int
-    let thumnail: String
-    let title: String
-    let link: String
-    
-    var contents: String {
-        return "\(author) | \(time)회\n\(date)"
-    }
-}
+//struct Video {
+//    let author: String
+//    let date: String
+//    let time: Int
+//    let thumnail: String
+//    let title: String
+//    let link: String
+//    
+//    var contents: String {
+//        return "\(author) | \(time)회\n\(date)"
+//    }
+//}
 
 class VideoViewController: UIViewController {
+    
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var videoTableView: UITableView!
@@ -41,12 +42,20 @@ class VideoViewController: UIViewController {
         videoTableView.rowHeight = 140
 
         searchBar.delegate = self
+        
+//        KakaoAPIManager.shared.callRequest(type: .video, query: searchBar.text ?? "") { result in
+//            self.vclip = result
+//        }
     }
     
     func callRequest(query: String, page: Int) {
         
-        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
-            print("======\(json)")
+//        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
+//            print("======\(json)")
+//        }
+        KakaoAPIManager.shared.callRequest(type: .video, query: query) { result in
+            self.isEnd = result.meta.isEnd
+            self.videoList.append(contentsOf: result.documents)
         }
         
     }
@@ -119,7 +128,7 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
         cell.titleLabel.text = videoList[indexPath.row].title
         cell.contentLabel.text = videoList[indexPath.row].contents
         
-        if let url = URL(string: videoList[indexPath.row].thumnail) {
+        if let url = URL(string: videoList[indexPath.row].thumbnail) {
             cell.thumbnailImageiView.kf.setImage(with: url)
             
         }
