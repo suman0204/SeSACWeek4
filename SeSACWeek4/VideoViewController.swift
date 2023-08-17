@@ -29,7 +29,12 @@ class VideoViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var videoTableView: UITableView!
     
-    var videoList: [Video] = []
+    var videoList: [Document] = [] {
+        didSet {
+            videoTableView.reloadData()
+        }
+    }
+    
     var page = 1
     var isEnd = false //현재 페이지가 마지막 페이지인지 점검하는 프로퍼티
     
@@ -46,16 +51,28 @@ class VideoViewController: UIViewController {
 //        KakaoAPIManager.shared.callRequest(type: .video, query: searchBar.text ?? "") { result in
 //            self.vclip = result
 //        }
+        
+        
     }
     
     func callRequest(query: String, page: Int) {
+//
+//        let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//        let url = "https://dapi.kakao.com/v2/search/vclip?query=\(text)&size=10&page=\(page)"
+//        let header: HTTPHeaders = ["Authorization" : "KakaoAK \(APIKey.kakao)"]
         
 //        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
 //            print("======\(json)")
 //        }
         KakaoAPIManager.shared.callRequest(type: .video, query: query) { result in
             self.isEnd = result.meta.isEnd
-            self.videoList.append(contentsOf: result.documents)
+            
+            self.videoList = result.documents
+            
+            self.videoTableView.reloadData()
+
+        } failure: {
+            print("no Data")
         }
         
     }
@@ -117,15 +134,17 @@ extension VideoViewController: UISearchBarDelegate {
 extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(videoList.count)
         return videoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoViewController.identifier) as? VideoTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier) as? VideoTableViewCell else {
             return UITableViewCell()
         }
         
         cell.titleLabel.text = videoList[indexPath.row].title
+        print(videoList[indexPath.row].title)
         cell.contentLabel.text = videoList[indexPath.row].contents
         
         if let url = URL(string: videoList[indexPath.row].thumbnail) {
