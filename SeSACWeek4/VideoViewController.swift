@@ -64,16 +64,16 @@ class VideoViewController: UIViewController {
 //        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
 //            print("======\(json)")
 //        }
-        KakaoAPIManager.shared.callRequest(type: .video, query: query) { result in
-            self.isEnd = result.meta.isEnd
-            
-            self.videoList = result.documents
-            
-            self.videoTableView.reloadData()
-
-        } failure: {
-            print("no Data")
-        }
+//        KakaoAPIManager.shared.callRequest(type: .video, query: query, page: page) { result in
+//            self.isEnd = result.meta.isEnd
+//
+//            self.videoList = result.documents
+//
+//            self.videoTableView.reloadData()
+//
+//        } failure: {
+//            print("no Data")
+//        }
         
     }
 //    AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { response in
@@ -127,7 +127,19 @@ extension VideoViewController: UISearchBarDelegate {
         guard let query = searchBar.text else{
             return
         }
-        callRequest(query: query, page: page)
+//        callRequest(query: query, page: page)
+        
+        KakaoAPIManager.shared.callRequest(type: .video, query: query, page: page) { result in
+            self.isEnd = result.meta.isEnd
+            
+            self.videoList = result.documents
+            
+            self.videoTableView.reloadData()
+
+        } failure: {
+            print("no Data")
+        }
+        
     }
 }
 
@@ -162,7 +174,19 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
         for indexPath in indexPaths {
             if videoList.count - 1 == indexPath.row && page < 15 && isEnd == false {
                 page += 1
-                callRequest(query: searchBar.text!, page: page)
+//                callRequest(query: searchBar.text!, page: page)
+                
+                KakaoAPIManager.shared.callRequest(type: .video, query: searchBar.text!, page: page) { result in
+                    self.isEnd = result.meta.isEnd
+                    
+                    self.videoList = result.documents
+                    
+                    self.videoTableView.reloadData()
+
+                } failure: {
+                    print("no Data")
+                }
+                
             }
         }
     }

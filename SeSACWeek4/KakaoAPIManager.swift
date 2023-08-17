@@ -17,10 +17,10 @@ class KakaoAPIManager {
     
     let header: HTTPHeaders = ["Authorization" : "KakaoAK \(APIKey.kakao)"]
     
-    func callRequest(type: Endpoint, query: String, success: @escaping (VideoResult) -> (), failure: @escaping () -> Void ) {
+    func callRequest(type: Endpoint, query: String, page: Int, success: @escaping (VideoResult) -> (), failure: @escaping () -> Void ) {
         
         let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let url = type.requestURL + text
+        let url = type.requestURL + text + "&size=10&page=" + "\(page)"
         
         print(url)
         
@@ -37,7 +37,30 @@ class KakaoAPIManager {
             }
         }
 
-        
+//        "https://dapi.kakao.com/v2/search/vclip?query=\(text)&size=10&page=\(page)"
+        /*
+         func callRequest(query: String, page: Int) {
+     //
+     //        let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+     //        let url = "https://dapi.kakao.com/v2/search/vclip?query=\(text)&size=10&page=\(page)"
+     //        let header: HTTPHeaders = ["Authorization" : "KakaoAK \(APIKey.kakao)"]
+             
+     //        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
+     //            print("======\(json)")
+     //        }
+             KakaoAPIManager.shared.callRequest(type: .video, query: query) { result in
+                 self.isEnd = result.meta.isEnd
+                 
+                 self.videoList = result.documents
+                 
+                 self.videoTableView.reloadData()
+
+             } failure: {
+                 print("no Data")
+             }
+             
+         }
+         */
     }
 }
 
