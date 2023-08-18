@@ -179,14 +179,14 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
                 KakaoAPIManager.shared.callRequest(type: .video, query: searchBar.text!, page: page) { result in
                     self.isEnd = result.meta.isEnd
                     
-                    self.videoList = result.documents
+                    self.videoList.append(contentsOf: result.documents)
                     
                     self.videoTableView.reloadData()
+
 
                 } failure: {
                     print("no Data")
                 }
-                
             }
         }
     }
